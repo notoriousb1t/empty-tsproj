@@ -1,0 +1,8 @@
+.idea
+.vs
+node_modules
+typings
+client/app/**/*.js
+client/app/**/*.map
+client/lib/es6-shim/**/*
+client/lib/systemjs/**/*

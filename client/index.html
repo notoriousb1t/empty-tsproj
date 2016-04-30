@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head prefix="og: http://ogp.me/ns#">
+    <base href="/">
+    <meta http-equiv='X-UA-Compatible' content='IE=Edge'>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <meta http-equiv='Content-Language' content='en-us' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no'>
+    <title>Home</title>
+    <!-- import lib css -->
+    <link rel="stylesheet" href="./styles/site.css" />
+
+    <!-- 1. Load libraries -->
+    <!-- IE required polyfills, in this exact order -->
+    <script src="./lib/es6-shim/es6-shim.min.js"></script>
+    <script src="./lib/systemjs/dist/system-polyfills.js"></script>
+    <script src="./lib/systemjs/dist/system.src.js"></script>
+
+    <script type="text/javascript">
+        System.config({
+            packages: {        
+                app: {
+                    format: 'cjs',
+                    defaultExtension: 'js'
+                }
+            }
+        });
+    </script>
+    
+    <!-- import lib css -->
+        
+    <script>
+        System.import('app/main').then(null, console.error.bind(console));
+    </script>
+</head>
+
+<body>
+    <ejs-app></ejs-app>
+</body>
+
+</html>

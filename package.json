@@ -1,0 +1,47 @@
+{
+  "author": "christopher.j.wallis@gmail.com",
+  "bugs": {
+    "url": "https://github.com/notoriousb1t/empty-tsproj/issues"
+  },
+  "dependencies": {
+    "es6-shim": "^0.35.0",
+    "reflect-metadata": "0.1.2",
+    "systemjs": "0.19.24",
+    "zone.js": "0.6.6"
+  },
+  "devDependencies": {
+    "autoless": "^0.1.7",
+    "concurrently": "^2.0.0",
+    "less": "^2.6.1",
+    "less-plugin-clean-css": "^1.5.1",
+    "lite-server": "^2.1.0",
+    "typescript": "^1.8.9",
+    "typings": "^0.7.9",
+    "copyfiles": "^0.2.1"
+  },
+  "description": "Empty TypeScript lite-server project",
+  "keywords": [
+    "typescript",
+    "javascript",
+    "lite-server",
+    "typings",
+    "less"
+  ],
+  "license": "MIT",
+  "name": "empty-tsproj",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/notoriousb1t/empty-tsproj"
+  },
+  "scripts": {
+    "styles": "autoless --autoprefix \"last 2 versions\" ./client/styles",
+    "start": "concurrently \"npm run tsc:w\" \"npm run lite\" \"npm run styles\" ",
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
+    "lite": "lite-server",
+    "typings": "typings",
+    "postinstall": "typings install && npm run copylibs",
+    "copylibs": "copyfiles -u 1 \"node_modules/es6-shim/*.min.js\" \"node_modules/systemjs/dist/*\" \"./client/lib\""
+  },
+  "version": "0.0.1a"
+}
